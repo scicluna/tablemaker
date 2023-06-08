@@ -3,7 +3,7 @@ import DropDown from "./DropDown"
 import Table from "./Table"
 import Roller from "./Roller"
 import tables from "../inputs/tables.json"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 export type Table = {
     header: string
@@ -11,20 +11,13 @@ export type Table = {
 }
 
 export default function TableSpace() {
-    const [tableList, setTableList] = useState<{}[]>([])
-    const [currentTable, setCurrentTable] = useState<Table>()
-
-    useEffect(() => {
-        setTableList(tables)
-        setCurrentTable(tables[0])
-    }, [])
-
-    console.log(currentTable)
+    const [tableList] = useState<Table[]>(tables)
+    const [currentTable, setCurrentTable] = useState<Table>(tables[0])
 
     return (
         <>
-            <DropDown />
-            {currentTable ? <Table currentTable={currentTable} /> : <h1>Loading...</h1>}
+            <DropDown tableList={tableList} currentTable={currentTable} setCurrentTable={setCurrentTable} />
+            <Table currentTable={currentTable} />
             <Roller />
         </>
     )
