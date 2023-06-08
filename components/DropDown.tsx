@@ -9,7 +9,7 @@ import TableNavigator from "./TableNavigator"
 type DropDownProps = {
     tableList: Table[],
     currentTable: Table,
-    setCurrentTable: Dispatch<SetStateAction<Table>>
+    setCurrentTable: Dispatch<SetStateAction<Table | null>>
 }
 
 export default function DropDown({ tableList, currentTable, setCurrentTable }: DropDownProps) {
@@ -20,8 +20,8 @@ export default function DropDown({ tableList, currentTable, setCurrentTable }: D
     })
 
     return (
-        <div className="w-full flex justify-between">
-            <TableNavigator direction={-1} />
+        <div className="w-full flex justify-between h-24">
+            <TableNavigator direction={-1} tableList={tableList} index={tableList.indexOf(currentTable)} setCurrentTable={setCurrentTable} />
             <Combobox value={currentTable} onChange={setCurrentTable}>
                 <div className="relative mt-1 flex flex-col justify-center items-center w-full">
                     <div className="relative sm:w-1/2 w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
@@ -40,7 +40,7 @@ export default function DropDown({ tableList, currentTable, setCurrentTable }: D
                         leaveTo="opacity-0"
                         afterLeave={() => setQuery('')}
                     >
-                        <Combobox.Options className="absolute z-10 mt-1 max-h-60 sm:w-1/2 w-11/12 top-10 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                        <Combobox.Options className="absolute z-10 mt-1 max-h-60 sm:w-1/2 w-11/12 top-16 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                             {filteredTables.length === 0 && query !== '' ? (
                                 <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
                                     Nothing found.
@@ -76,7 +76,7 @@ export default function DropDown({ tableList, currentTable, setCurrentTable }: D
                     </Transition>
                 </div>
             </Combobox>
-            <TableNavigator direction={1} />
+            <TableNavigator direction={1} tableList={tableList} index={tableList.indexOf(currentTable)} setCurrentTable={setCurrentTable} />
         </div>
     )
 }

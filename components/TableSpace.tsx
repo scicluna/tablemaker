@@ -12,20 +12,22 @@ export type Table = {
 }
 
 export default function TableSpace() {
-    const processedTables: Table[] = tableSmasher(tables)
-    const [currentTable, setCurrentTable] = useState<Table>(processedTables[0])
+    const [processedTables, setProcessedTables] = useState<Table[]>([])
+    const [currentTable, setCurrentTable] = useState<Table | null>(null)
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            if (processedTables.length < tables.length) {
-                setLoading(false)
-                clearInterval(interval)
-            }
-        }, 50)
+        new Promise<Table[]>(resolve => {
+            const processed = tableSmasher(tables)
+            resolve(processed)
+        }).then((processed) => {
+            setProcessedTables(processed)
+            setCurrentTable(processed[0])
+            setLoading(false)
+        })
     }, [])
 
-    if (loading) return <div>Loading...</div>
+    if (loading || !currentTable) return <div>Loading...</div>
 
     return (
         <div className="w-full h-full flex flex-col gap-4 justify-center items-center">

@@ -15,7 +15,9 @@ export default function Roller({ currentTable }: RollerProps) {
     }
 
     useEffect(() => {
-        setResult(null)
+        if (result) {
+            setResult(null)
+        }
     }, [currentTable])
 
     return (

@@ -1,3 +1,4 @@
+
 import { Table } from "@/components/TableSpace";
 
 export default function tableSmasher(tables: Table[]) {
