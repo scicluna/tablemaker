@@ -2,7 +2,7 @@
 import { Table } from "@/components/TableSpace";
 
 export default function tableSmasher(tables: Table[]) {
-    const smashedTable: Table[] = []
+    const smashedTables: Table[] = []
     for (let i = 0; i < tables.length; i++) {
         const table = tables[i]
         const nextTable = tables[i + 1]
@@ -22,18 +22,18 @@ export default function tableSmasher(tables: Table[]) {
 
             table.header = words.join(" ")
 
-            smashedTable.push(table)
+            smashedTables.push(table)
         }
     }
-    return smashedTable
+    return smashedTables
 }
 
 function headerEquality(table: Table, nextTable: Table) {
-    if (!table || !nextTable) return
+    if (!table || !nextTable) return false
     const tableHeader = table.header.split(" ")
     const nextTableHeader = nextTable.header.split(" ")
 
-    if ((tableHeader[2] == nextTableHeader[2])) {
+    if ((tableHeader[2].toLowerCase() == nextTableHeader[2].toLowerCase())) {
         return true
     } return false
 }
