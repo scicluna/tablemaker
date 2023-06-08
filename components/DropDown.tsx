@@ -23,7 +23,7 @@ export default function DropDown({ tableList, currentTable, setCurrentTable }: D
             <Combobox value={currentTable} onChange={setCurrentTable}>
                 <div className="relative mt-1 flex flex-col justify-center items-center">
                     <div className="relative sm:w-1/2 w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
-                        <Combobox.Input onChange={(event) => setQuery(event.target.value)} displayValue={(table: Table) => table.header} className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0 outline-none" />
+                        <Combobox.Input onChange={(event) => setQuery(event.target.value)} displayValue={(table: Table) => table.header} className="w-full bg-gray-100 border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0 outline-none" />
                         <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                             <ChevronUpDownIcon
                                 className="h-5 w-5 text-gray-400"
