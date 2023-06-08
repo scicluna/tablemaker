@@ -4244,8 +4244,7 @@
             "Triumvirate (ruled by three magistrates)",
             "Tyranny (ruled by a tyrant or absolute ruler)",
             "Utopia (unrealistic but perfect society)",
-            "Viceroyalty (ruled by a viceroy)",
-            "* Roll again to determine base government "
+            "Viceroyalty (ruled by a viceroy)"
         ]
     },
     {
@@ -9450,7 +9449,7 @@
         ]
     },
     {
-        "header": "Table 3-166: Room/Inn Amenities 1*",
+        "header": "Table 3-166: Room/Inn Amenities 1",
         "items": [
             "Armoire",
             "Balcony",
@@ -9601,7 +9600,7 @@
         ]
     },
     {
-        "header": "Table 3-172: Encounter Conditions 1 ",
+        "header": "Table 3-172: Encounter Conditions 1",
         "items": [
             "Angry",
             "Arguing with someone",
@@ -19014,7 +19013,7 @@
         ]
     },
     {
-        "header": "Table 7-14: Patrons, generic 1*",
+        "header": "Table 7-14: Patrons, generic 1",
         "items": [
             "Angry hermit ",
             "Anxious widow",
@@ -21329,7 +21328,7 @@
         ]
     },
     {
-        "header": "Table 7-107: Encounter Conditions 1 ",
+        "header": "Table 7-107: Encounter Conditions 1",
         "items": [
             "Angry",
             "Arguing with someone",

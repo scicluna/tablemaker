@@ -4,6 +4,7 @@ import { Table } from "./TableSpace"
 import { Combobox, Transition } from "@headlessui/react"
 import { Dispatch, SetStateAction, useState, Fragment } from "react"
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import TableNavigator from "./TableNavigator"
 
 type DropDownProps = {
     tableList: Table[],
@@ -19,9 +20,10 @@ export default function DropDown({ tableList, currentTable, setCurrentTable }: D
     })
 
     return (
-        <div className="w-full">
+        <div className="w-full flex justify-between">
+            <TableNavigator direction={-1} />
             <Combobox value={currentTable} onChange={setCurrentTable}>
-                <div className="relative mt-1 flex flex-col justify-center items-center">
+                <div className="relative mt-1 flex flex-col justify-center items-center w-full">
                     <div className="relative sm:w-1/2 w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
                         <Combobox.Input onChange={(event) => setQuery(event.target.value)} displayValue={(table: Table) => table.header} className="w-full bg-gray-100 border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0 outline-none" />
                         <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
@@ -38,7 +40,7 @@ export default function DropDown({ tableList, currentTable, setCurrentTable }: D
                         leaveTo="opacity-0"
                         afterLeave={() => setQuery('')}
                     >
-                        <Combobox.Options className="absolute z-10 mt-1 max-h-60 w-1/2 top-10 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                        <Combobox.Options className="absolute z-10 mt-1 max-h-60 sm:w-1/2 w-11/12 top-10 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                             {filteredTables.length === 0 && query !== '' ? (
                                 <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
                                     Nothing found.
@@ -74,6 +76,7 @@ export default function DropDown({ tableList, currentTable, setCurrentTable }: D
                     </Transition>
                 </div>
             </Combobox>
+            <TableNavigator direction={1} />
         </div>
     )
 }
