@@ -15,10 +15,10 @@ export default function TableSpace() {
     const [currentTable, setCurrentTable] = useState<Table>(tables[0])
 
     return (
-        <>
+        <div className="w-full h-full flex flex-col gap-5 justify-center items-center">
             <DropDown tableList={tableList} currentTable={currentTable} setCurrentTable={setCurrentTable} />
+            <Roller currentTable={currentTable} />
             <Table currentTable={currentTable} />
-            <Roller />
-        </>
+        </div>
     )
 }

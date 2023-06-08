@@ -909,8 +909,7 @@
             "Bring back the egg of a great flying creature",
             "Bring back the head of a magical beast",
             "Bring back the live young of a totem animal",
-            "Bring back the scalp of an enemy tribesman ",
-            "or animal totem",
+            "Bring back the scalp of an enemy tribesman or animal totem",
             "Craft a personal talisman baptized in blood",
             "Craft weapon and armor from scratch",
             "Drink the blood of the first solo kill",
@@ -15575,13 +15574,12 @@
     {
         "header": "Table 6-1: Magic Item Creation Flavor",
         "items": [
-            "Bind an incorporeal spirit to the item or hold it long enough to impart its knowledge or actual ",
-            "essence into the item's suite of powers.",
-            "Clear your mind of outside thoughts, stop all activities, and be away from companions in order to ",
-            "reach perfect concentration.Contact your mentor or superior via magic for advice or blessings and perhaps to borrow some of ",
-            "his or her power.If pious, create a shroud with runes of the appropriate deity to wrap the item in during its final ",
-            "creation process.Keep accurate records with tablets, hourglasses, and candles for the exact length of time of each ",
-            "incantation for precision and perfection.Take extra special care of any familiar or animal companion with whom your bond will be strained ",
+            "Bind an incorporeal spirit to the item or hold it long enough to impart its knowledge or actual essence into the item's suite of powers.",
+            "Clear your mind of outside thoughts, stop all activities, and be away from companions in order to reach perfect concentration.",
+            "Contact your mentor or superior via magic for advice or blessings and perhaps to borrow some of his or her power.",
+            "If pious, create a shroud with runes of the appropriate deity to wrap the item in during its final creation process.",
+            "A huge monument topped with a holy symbol and carved with accounts of his deeds marks this grave. incantation for precision and perfection.",
+            "Take extra special care of any familiar or animal companion with whom your bond will be strained ",
             "by putting all energies into item creation.Meditate on command words, phrases, or item activation methods. The symbols or words may ",
             "come to you in visions and will need to be deciphered.Repeatedly chant special formulas over the item in whispers or other tongues, and with motions ",
             "over the item with a fetish, focus, or holy symbol in hand.Research ancient heroes or similar magic items from legend dealing with the powers of your item ",
@@ -15758,8 +15756,7 @@
             "The blade bears an intricately etched hunt scene.",
             "The bone shaft is veined with mithral, pulsing a faint glow. Strange symbols dance between the veins.",
             "The grip is wrapped in what appears to be hair, possibly from a fell creature of the Abyss.",
-            "The grip is wrapped in blue dragon hide, the pommel bears an amethyst of the brightest hue,",
-            " and the crossguard is polished silver, molded to look like it's covered in dragon scales.",
+            "The grip is wrapped in blue dragon hide, the pommel bears an amethyst of the brightest hue and the crossguard is polished silver, molded to look like it's covered in dragon scales.",
             "The grip is wrapped in multicolored cloth strips leading to a bright red tassel made of fox hair.",
             "The hilt is split at both ends of the crossguard as if two forked tongues protruded from each end.",
             "The hilt is wrapped in a blackish-red leather, dark as blood, which it most likely is stained with.",
@@ -15822,8 +15819,7 @@
             "King or queen",
             "Madman",
             "Magi",
-            "Master craftsman",
-            " "
+            "Master craftsman"
         ]
     },
     {
@@ -16628,7 +16624,7 @@
             "Trosingehr",
             "Twoarra shinzhul",
             "Verrak-khosira",
-            "Volavi CHAPTER SIX "
+            "Volavi"
         ]
     },
     {
@@ -16953,7 +16949,7 @@
             "The sun will burn the sea, and a great fleet of black ships will seek the city\u00b9s most loved treasure.",
             "Three warriors will come, needing the aid of a sorceress whose race they would normally avoid.",
             "Two warring brothers will lay waste to all they hold dear unless shown the error of their ways.",
-            "When shadows fall at midnight, the restless dead will rise to slay the living. CHAPTER SIX "
+            "When shadows fall at midnight, the restless dead will rise to slay the living."
         ]
     },
     {
