@@ -1,26 +1,17 @@
-
 import { Table } from "@/components/TableSpace";
 
 export default function tableSmasher(tables: Table[]) {
     const smashedTables: Table[] = []
     for (let i = 0; i < tables.length; i++) {
-        const table = tables[i]
+        let table = tables[i]
         const nextTable = tables[i + 1]
-        const previousTable = tables[i - 1]
 
         if (headerEquality(table, nextTable)) {
-            for (let i = 0; i < nextTable.items.length; i++) {
-                table.items.push(nextTable.items[i])
-            }
+            table = recursiveHeaderCheck(table, nextTable, tables, i + 1)
         }
 
-        if (!headerEquality(previousTable, table)) {
-            table.header = table.header.replace(/1$/, "")
-
-            let words = table.header.split(' ')
-            words[2] = words[2].charAt(0).toUpperCase() + words[2].slice(1)
-
-            table.header = words.join(" ")
+        if (!headerEquality(table, tables[i - 1])) {
+            table.header = formatTableHeader(table.header)
 
             smashedTables.push(table)
         }
@@ -28,12 +19,36 @@ export default function tableSmasher(tables: Table[]) {
     return smashedTables
 }
 
-function headerEquality(table: Table, nextTable: Table) {
-    if (!table || !nextTable) return false
-    const tableHeader = table.header.split(" ")
-    const nextTableHeader = nextTable.header.split(" ")
+function formatTableHeader(header: string): string {
+    header = header.replace(/1$/, "")
 
-    if ((tableHeader[2].toLowerCase() == nextTableHeader[2].toLowerCase())) {
+    let words = header.split(' ')
+    words[2] = words[2].charAt(0).toUpperCase() + words[2].slice(1)
+
+    return words.join(" ")
+}
+
+function headerEquality(table1: Table, table2: Table): boolean {
+    if (!table1 || !table2) return false
+    const header1 = table1.header.split(":")
+    const header2 = table2.header.split(":")
+
+    const title1 = header1[1].replace(/\d+$/, '').toLowerCase();
+    const title2 = header2[1].replace(/\d+$/, '').toLowerCase();
+
+    if (title1 == title2) {
         return true
-    } return false
+    }
+
+    return false
+}
+
+function recursiveHeaderCheck(table: Table, nextTable: Table, tables: Table[], index: number): Table {
+    if (!headerEquality(table, nextTable)) return table
+
+    for (let i = 0; i < nextTable.items.length; i++) {
+        table.items.push(nextTable.items[i])
+    }
+
+    return recursiveHeaderCheck(table, tables[index + 1], tables, index + 1)
 }
